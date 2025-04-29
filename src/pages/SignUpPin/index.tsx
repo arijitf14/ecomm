@@ -29,7 +29,7 @@ const SignUpPin = () => {
   };
 
   return (
-    <div className="h-screen flex flex-col justify-between px-4 bg-white overflow-hidden">
+    <div className="min-h-[100dvh] flex flex-col justify-between px-4 bg-white overflow-hidden">
       {/* Top: Heading */}
       <div className="text-center pt-6">
         <h1 className="text-3xl md:text-5xl font-bold text-emerald-900">
