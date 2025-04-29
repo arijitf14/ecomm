@@ -29,32 +29,23 @@ const SignUpPin = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col px-4 bg-white">
+    <div className="h-screen flex flex-col justify-between px-4 bg-white overflow-hidden">
       {/* Top: Heading */}
-      <div className="w-full text-center mt-10">
-        <h1 className="text-3xl font-bold text-emerald-900">Enter your PIN</h1>
+      <div className="text-center pt-6">
+        <h1 className="text-3xl md:text-5xl font-bold text-emerald-900">
+          Enter your PIN
+        </h1>
       </div>
 
       {/* Middle: Dots + Keypad */}
-      <div className="flex flex-col flex-grow justify-center items-center gap-10">
+      <div className="flex-grow flex flex-col items-center justify-center gap-10">
         {/* PIN Dots */}
-        {/* <div className="flex gap-4">
-          {otp.map((digit, index) => (
-            <div
-              key={index}
-              className={`w-6 h-6 sm:w-6 sm:h-6 rounded-lg transition-all duration-200 ${
-                digit ? "bg-emerald-900" : "bg-gray-100"
-              }`}
-            />
-          ))}
-        </div> */}
-
         <div className="flex gap-4">
           {otp.map((digit, index) => (
             <div
               key={index}
               className={`w-6 h-6 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-lg transition-all duration-200 ${
-                digit ? "bg-emerald-900" : "bg-gray-100"
+                digit ? "bg-emerald-900" : "bg-gray-200"
               }`}
             />
           ))}
@@ -88,7 +79,7 @@ const SignUpPin = () => {
       </div>
 
       {/* Bottom: Face ID Button */}
-      <div className="w-full max-w-md mx-auto px-2 mb-10">
+      <div className="w-full max-w-md mx-auto px-2 pb-6">
         <Button
           onClick={() => navigate("/login-back")}
           className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
@@ -101,3 +92,4 @@ const SignUpPin = () => {
 };
 
 export default SignUpPin;
+
