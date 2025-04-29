@@ -31,9 +31,9 @@ const validationSchema = Yup.object({
 const LoginBack = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
-
+ 
   return (
-    <div className="h-screen w-full bg-gray-100 flex flex-col justify-between px-4 py-4 overflow-hidden">
+    <div className="min-h-[100dvh] w-full bg-gray-100 flex flex-col justify-between px-4 py-4">
       {/* Top Section */}
       <div className="text-center pt-4">
         <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-emerald-900">
