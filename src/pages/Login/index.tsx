@@ -70,7 +70,7 @@ const Login = () => {
             errors,
             touched,
           }) => (
-            <form className="w-full space-y-4" onSubmit={handleSubmit}>
+            <form className="w-full" onSubmit={handleSubmit}>
               <div className="w-full space-y-4">
                 <div>
                   {/* Email */}
@@ -185,17 +185,19 @@ const Login = () => {
               <Button
                 // onClick={handleSubmit}
                 type="submit"
-                className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
+                className="w-full bg-emerald-900 mt-5 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
               >
                 Submit
               </Button>
               {/* Already have account */}
-              <p className="text-sm sm:text-base text-emerald-900">
-                Already have an account?{" "}
-                <span className="font-semibold text-emerald-900 cursor-pointer">
-                  Sign In
-                </span>
-              </p>
+              <div className="flex flex-row items-center justify-center mt-5">
+                <p className="text-sm sm:text-base text-emerald-900">
+                  Already have an account?{" "}
+                  <span className="font-semibold text-emerald-900 cursor-pointer">
+                    Sign In
+                  </span>
+                </p>
+              </div>
 
               {/* Or continue */}
               <div className="flex flex-col items-center gap-4 mt-6">
