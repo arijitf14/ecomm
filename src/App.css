@@ -31,6 +31,19 @@ body {
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+*:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+@layer base {
+  *:focus-visible {
+    outline: none !important;
+    box-shadow: none !important;
+  }
+}
+
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);

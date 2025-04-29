@@ -41,13 +41,13 @@ const Login = () => {
         {/* Progress indicator */}
         <div className="w-[40%] mx-auto">
           <Progress
-            value={40}
+            value={33}
             className="h-2 mb-5 rounded-full bg-gray-300 [&>div]:bg-emerald-800"
           />
         </div>
 
         <div>
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl mb-20 font-bold text-emerald-900">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-emerald-900">
             Getting Started
           </h1>
         </div>
@@ -59,7 +59,7 @@ const Login = () => {
           onSubmit={(values) => {
             // onFinalSubmit(values);x
             console.log("Values", values);
-            navigate('/otp')
+            navigate("/otp");
           }}
         >
           {({
@@ -113,7 +113,7 @@ const Login = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email}
-                        className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 focus:py-8 ${
+                        className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
                           touched.email && errors.email
                             ? "border-red-500"
                             : "border-gray-300"
@@ -151,7 +151,7 @@ const Login = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
-                      className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 focus:py-8 ${
+                      className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
                         touched.password && errors.password
                           ? "border-red-500"
                           : "border-gray-300"
@@ -181,14 +181,13 @@ const Login = () => {
                     </div>
                   )}
                 </div>
-                <Button
+              </div>
+              <Button
                   onClick={handleSubmit}
                   className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
                 >
                   Submit
                 </Button>
-              </div>
-
               {/* Already have account */}
               <p className="text-sm sm:text-base text-emerald-900">
                 Already have an account?{" "}
@@ -220,7 +219,7 @@ const Login = () => {
               </div>
 
               {/* Terms */}
-              <div className="w-[70%] mx-auto">
+              <div className="w-[70%] flex flex-col items-center mx-auto">
                 <p className="text-xs sm:text-sm text-emerald-900 text-center max-w-xs mt-8">
                   By creating an account you agree to our{" "}
                   <span className="text-emerald-900 font-bold">
