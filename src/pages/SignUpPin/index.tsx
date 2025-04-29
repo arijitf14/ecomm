@@ -150,10 +150,6 @@ const SignUpPin = () => {
     }
   };
 
-  const handleReset = () => {
-    setOtp(Array(4).fill(""));
-  };
-
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 bg-white">
       <div className="flex flex-col items-center gap-6 w-full max-w-md">

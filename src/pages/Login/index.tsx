@@ -70,7 +70,7 @@ const Login = () => {
             errors,
             touched,
           }) => (
-            <>
+            <form className="w-full space-y-4" onSubmit={handleSubmit}>
               <div className="w-full space-y-4">
                 <div>
                   {/* Email */}
@@ -183,11 +183,12 @@ const Login = () => {
                 </div>
               </div>
               <Button
-                  onClick={handleSubmit}
-                  className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
-                >
-                  Submit
-                </Button>
+                // onClick={handleSubmit}
+                type="submit"
+                className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
+              >
+                Submit
+              </Button>
               {/* Already have account */}
               <p className="text-sm sm:text-base text-emerald-900">
                 Already have an account?{" "}
@@ -227,7 +228,7 @@ const Login = () => {
                   </span>
                 </p>
               </div>
-            </>
+            </form>
           )}
         </Formik>
       </div>

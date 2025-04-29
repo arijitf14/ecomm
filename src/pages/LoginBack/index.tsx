@@ -1,7 +1,6 @@
 // import { Apple } from "lucide-react";
 import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/input";
-import { Progress } from "../../components/ui/progress";
 import apple from "../../assets/apple.svg";
 import rightarrow from "../../assets/rightarrow.svg";
 import google from "../../assets/google.svg";
@@ -67,6 +66,7 @@ const LoginBack = () => {
             touched,
           }) => (
             <>
+            <form className="w-full" onSubmit={handleSubmit}>
               <div className="w-full space-y-4">
                 <div>
                   {/* Email */}
@@ -180,12 +180,13 @@ const LoginBack = () => {
               </div>
 
               {/* Already have account */}
-              <div className="flex flex-row w-full items-center justify-between">
+              <div className="flex flex-row w-full mt-5 items-center justify-between">
                 <p className="text-sm sm:text-base text-emerald-900">
                   Forgot Password?
                 </p>
                 <Button
-                  onClick={handleSubmit}
+                  // onClick={handleSubmit}
+                  type="submit"
                   className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base sm:text-lg w-12 h-12 md:text-xl py-6 rounded-xl"
                 >
                     <img src={rightarrow} alt="Logo" className="h-10 w-10" />
@@ -223,6 +224,7 @@ const LoginBack = () => {
                   </span>
                 </p>
               </div>
+            </form>
             </>
           )}
         </Formik>
