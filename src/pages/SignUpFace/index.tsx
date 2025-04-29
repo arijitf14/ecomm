@@ -7,7 +7,7 @@ export default function FaceIDSetup() {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[100dvh] flex flex-col justify-between items-center px-4 py-10 bg-gray-50">
+    <div className="min-h-[100dvh] flex flex-col justify-between items-center px-4 py-10 bg-gray-100">
       <div>
         <div className="w-[40%] mx-auto">
           <Progress
