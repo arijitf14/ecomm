@@ -1,13 +1,28 @@
 // src/pages/Page1.tsx
-import { Link } from "react-router-dom";
+import {
+  BottomTab,
+  CardList,
+  Header,
+  Invite,
+  PromoCard,
+  RecentActivity,
+} from "../../components/elements";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen p-4">
-      <h1 className="text-2xl font-bold mb-4">Home</h1>
-      <Link to="/page2" className="bg-black text-white px-4 py-2 rounded">
-        Go to Page 2
-      </Link>
+    <div className="flex flex-col h-[100dvh] bg-white overflow-hidden">
+      <div className="flex-1 overflow-y-auto pb-20">
+        <Header />
+        <CardList />
+        <RecentActivity />
+        <div className="px-4">
+          <Invite />
+        </div>
+        <div className="px-4 pb-4">
+          <PromoCard />
+        </div>
+      </div>
+      <BottomTab />
     </div>
   );
 };
