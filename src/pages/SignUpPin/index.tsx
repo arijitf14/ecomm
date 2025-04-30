@@ -44,7 +44,7 @@ const SignUpPin = () => {
           {otp.map((digit, index) => (
             <div
               key={index}
-              className={`w-6 h-6 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-lg transition-all duration-200 ${
+              className={`w-10 h-14 sm:w-6 sm:h-6 md:w-8 md:h-8 lg:w-10 lg:h-10 rounded-lg transition-all duration-200 ${
                 digit ? "bg-emerald-900" : "bg-gray-200"
               }`}
             />
