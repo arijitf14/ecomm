@@ -52,7 +52,7 @@ const LoginBack = () => {
             validationSchema={validationSchema}
             onSubmit={(values) => {
               console.log("Values", values);
-              navigate("/otp");
+              navigate("/home");
             }}
           >
             {({
