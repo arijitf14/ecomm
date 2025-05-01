@@ -55,7 +55,8 @@ const Login = () => {
             validationSchema={validationSchema}
             onSubmit={(values) => {
               console.log("Values", values);
-              navigate("/otp");
+              // navigate("/otp");
+              navigate(`/otp?email=${encodeURIComponent(values.email)}`);
             }}
           >
             {({
