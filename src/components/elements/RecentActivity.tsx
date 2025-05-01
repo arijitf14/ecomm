@@ -33,10 +33,10 @@ export function RecentActivity() {
   return (
     <div className="mt-6 px-4">
       <div className="flex justify-between items-center mb-3">
-        <h2 className="text-lg font-semibold text-emerald-900">
+        <h2 className="text-lg font-semibold font-sans text-emerald-900">
           Recent activity
         </h2>
-        <button className="text-sm text-emerald-700 font-medium">
+        <button className="text-sm font-sans text-emerald-700 font-medium">
           See all
         </button>
       </div>
@@ -49,13 +49,13 @@ export function RecentActivity() {
                 {activity.icon}
               </div>
               <div>
-                <p className="font-medium text-emerald-900">{activity.type}</p>
-                <p className="text-sm text-gray-500">{activity.date}</p>
+                <p className="font-medium font-sans text-emerald-900">{activity.type}</p>
+                <p className="text-sm font-sans text-gray-500">{activity.date}</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="font-medium text-emerald-900">{activity.amount}</p>
-              <p className="text-sm text-gray-400">{activity.note}</p>
+              <p className="font-medium font-sans text-emerald-900">{activity.amount}</p>
+              <p className="text-sm  font-sans text-gray-400">{activity.note}</p>
             </div>
           </div>
         ))}

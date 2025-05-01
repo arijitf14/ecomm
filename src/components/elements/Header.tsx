@@ -14,13 +14,13 @@ export function Header() {
       </div>
 
       <div className="text-center space-y-1">
-        <h1 className="text-4xl font-bold">Welcome, Robert</h1>
+        <h1 className="text-4xl font-sans font-bold">Welcome, Robert</h1>
         <div className="flex items-center justify-center">
-          <p className="text-3xl font-bold">$0.</p>
-          <p className="text-3xl text-white/70">00</p>
+          <p className="text-3xl font-sans font-bold">$0.</p>
+          <p className="text-3xl font-sans text-white/70">00</p>
         </div>
         <div className="flex items-center justify-center">
-          <p className="text-sm text-white/70">Available balance</p>
+          <p className="text-sm font-sans text-white/70">Available balance</p>
           <img src={info} alt="Apple" className="h-6 w-6 ml-1" />
         </div>
         <div className="flex items-center justify-center">

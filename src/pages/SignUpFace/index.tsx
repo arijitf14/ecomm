@@ -16,10 +16,10 @@ export default function FaceIDSetup() {
           />
         </div>
         <div className="w-[70%] mx-auto text-center">
-          <h1 className="text-2xl md:text-3xl lg:text-4xl font-semibold text-emerald-900">
+          <h1 className="text-2xl md:text-3xl font-sans lg:text-4xl font-semibold text-emerald-900">
             Face ID for faster payment
           </h1>
-          <p className="text-emerald-900 mt-2 text-base md:text-lg lg:text-xl">
+          <p className="text-emerald-900 mt-2 font-sans text-base md:text-lg lg:text-xl">
             Enable Face ID to log in faster and more securely
           </p>
         </div>
@@ -38,11 +38,11 @@ export default function FaceIDSetup() {
       <div className="flex flex-col gap-4 w-full max-w-md md:max-w-lg lg:max-w-xl">
         <Button
           onClick={() => navigate("/sign-up-pin")}
-          className="w-full bg-emerald-900 hover:bg-emerald-800 text-white text-base md:text-lg lg:text-xl py-6 md:py-7 lg:py-8 rounded-xl"
+          className="w-full bg-emerald-900 hover:bg-emerald-800 font-sans text-white text-base md:text-lg lg:text-xl py-6 md:py-7 lg:py-8 rounded-xl"
         >
           Enable face ID
         </Button>
-        <button className="text-sm md:text-base lg:text-lg font-semibold text-emerald-900">
+        <button className="text-sm md:text-base lg:text-lg font-sans font-semibold text-emerald-900">
           Log in with Email
         </button>
       </div>

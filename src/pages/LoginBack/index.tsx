@@ -31,15 +31,15 @@ const validationSchema = Yup.object({
 const LoginBack = () => {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
- 
+
   return (
-    <div className="min-h-[100dvh] w-full bg-gray-100 flex flex-col justify-between px-4 py-4">
+    <div className="min-h-[100dvh] flex flex-col justify-between px-4 py-6 bg-gray-100">
       {/* Top Section */}
-      <div className="text-center pt-4">
-        <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-emerald-900">
+      <div className="text-center">
+        <h1 className="text-3xl md:text-5xl lg:text-6xl font-sans font-bold text-emerald-900">
           Welcome back
         </h1>
-        <h3 className="text-base md:text-2xl lg:text-3xl mt-2 text-emerald-900">
+        <h3 className="text-base md:text-2xl lg:text-3xl mt-2 font-sans text-emerald-900">
           Sign in to your account
         </h3>
       </div>
@@ -74,7 +74,7 @@ const LoginBack = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.email}
-                    className={`peer rounded-xl border-2 px-4 pt-10 pb-4 w-full text-base md:text-lg lg:text-xl ${
+                    className={`peer rounded-xl border-2 font-sans px-4 pt-10 pb-4 w-full text-base md:text-lg lg:text-xl ${
                       touched.email && errors.email
                         ? "border-red-500"
                         : "border-gray-300"
@@ -82,14 +82,16 @@ const LoginBack = () => {
                   />
                   <Label
                     htmlFor="email"
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:text-sm text-emerald-900 ${
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 font-sans transition-all peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:text-sm text-emerald-900 ${
                       values.email ? "top-4 text-sm" : ""
                     }`}
                   >
                     Username
                   </Label>
                   {touched.email && errors.email && (
-                    <p className="text-red-500 text-sm mt-1">{errors.email}</p>
+                    <p className="text-red-500 font-sans text-sm mt-1">
+                      {errors.email}
+                    </p>
                   )}
                 </div>
 
@@ -103,7 +105,7 @@ const LoginBack = () => {
                     onChange={handleChange}
                     onBlur={handleBlur}
                     value={values.password}
-                    className={`peer rounded-xl border-2 px-4 pt-10 pb-4 w-full text-base md:text-lg lg:text-xl ${
+                    className={`peer rounded-xl border-2 px-4 pt-10 font-sans pb-4 w-full text-base md:text-lg lg:text-xl ${
                       touched.password && errors.password
                         ? "border-red-500"
                         : "border-gray-300"
@@ -111,7 +113,7 @@ const LoginBack = () => {
                   />
                   <Label
                     htmlFor="password"
-                    className={`absolute left-4 top-1/2 -translate-y-1/2 transition-all peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:text-sm text-emerald-900 ${
+                    className={`absolute left-4 top-1/2 -translate-y-1/2 font-sans transition-all peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:text-sm text-emerald-900 ${
                       values.password ? "top-4 text-sm" : ""
                     }`}
                   >
@@ -120,12 +122,12 @@ const LoginBack = () => {
                   <button
                     type="button"
                     onClick={() => setShowPassword((prev) => !prev)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-700 hover:text-emerald-900"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 font-sans text-emerald-700 hover:text-emerald-900"
                   >
                     {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                   </button>
                   {touched.password && errors.password && (
-                    <p className="text-red-500 text-sm mt-1">
+                    <p className="text-red-500 font-sans text-sm mt-1">
                       {errors.password}
                     </p>
                   )}
@@ -148,8 +150,8 @@ const LoginBack = () => {
       </div>
 
       {/* Bottom Section */}
-      <div className="flex flex-col items-center gap-3 pb-4">
-        <p className="text-sm text-emerald-900">Or continue with:</p>
+      <div className="flex flex-col items-center gap-3 pt-4 pb-2">
+        <p className="text-sm font-sans text-emerald-900">Or continue with:</p>
         <div className="flex space-x-4">
           <Button
             variant="outline"
@@ -164,9 +166,11 @@ const LoginBack = () => {
             <img src={google} alt="google" className="h-6 w-6" />
           </Button>
         </div>
-        <p className="text-xs text-center max-w-xs text-emerald-900">
+        <p className="text-xs text-center font-sans max-w-xs text-emerald-900">
           Having issues?{" "}
-          <span className="font-bold text-emerald-900">Contact Support</span>
+          <span className="font-bold font-sans text-emerald-900">
+            Contact Support
+          </span>
         </p>
       </div>
     </div>
@@ -174,4 +178,3 @@ const LoginBack = () => {
 };
 
 export default LoginBack;
-

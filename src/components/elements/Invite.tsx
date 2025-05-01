@@ -9,9 +9,9 @@ export function Invite() {
           <img src={gift} alt="Apple" className="h-16 w-16" />
         </div>
         <div>
-          <p className="text-sm text-gray-600">Invite friends</p>
-          <p className="font-semibold text-emerald-900 text-sm">Code LP867J</p>
-          <button className="bg-[#E8F45B] text-emerald-900 text-sm font-semibold px-3 py-1 mt-2 rounded-full flex items-center space-x-1 hover:opacity-90 transition">
+          <p className="text-sm font-sans text-gray-600">Invite friends</p>
+          <p className="font-semibold font-sans text-emerald-900 text-sm">Code LP867J</p>
+          <button className="bg-[#E8F45B] text-emerald-900 text-sm font-sans font-semibold px-3 py-1 mt-2 rounded-full flex items-center space-x-1 hover:opacity-90 transition">
             <span>Earn $200</span>
           </button>
         </div>

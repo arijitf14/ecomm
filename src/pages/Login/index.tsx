@@ -33,22 +33,23 @@ const Login = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-[100dvh] flex flex-col justify-between items-center px-4 py-6 bg-gray-100">
-      {/* Top: Progress Bar */}
-      <div className="w-[40%] max-w-md">
-        <Progress
-          value={33}
-          className="h-2 rounded-full bg-gray-300 [&>div]:bg-emerald-800"
-        />
+    <div className="min-h-[100dvh] flex flex-col justify-between px-4 py-6 bg-gray-100">
+      {/* Top: Progress Bar and Heading */}
+      <div className="flex flex-col items-center space-y-4">
+        <div className="w-[40%] max-w-md">
+          <Progress
+            value={33}
+            className="h-2 rounded-full bg-gray-300 [&>div]:bg-emerald-800"
+          />
+        </div>
+        <h1 className="text-3xl sm:text-4xl md:text-5xl font-sans font-bold text-emerald-900">
+          Getting Started
+        </h1>
       </div>
 
-      {/* Middle: Form Area */}
-      <div className="w-full flex-grow flex flex-col justify-center items-center">
+      {/* Middle: Form */}
+      <div className="flex-grow flex flex-col items-center justify-center">
         <div className="w-full max-w-sm sm:max-w-md md:max-w-2xl lg:max-w-3xl xl:max-w-4xl flex flex-col items-center gap-6 px-4">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-emerald-900">
-            Getting Started
-          </h1>
-
           <Formik
             initialValues={{ email: "", password: "" }}
             validationSchema={validationSchema}
@@ -78,7 +79,7 @@ const Login = () => {
                         onChange={handleChange}
                         onBlur={handleBlur}
                         value={values.email}
-                        className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
+                        className={`peer rounded-xl border-2 px-4 pt-10 pb-4 font-sans text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
                           touched.email && errors.email
                             ? "border-red-500"
                             : "border-gray-300"
@@ -86,7 +87,7 @@ const Login = () => {
                       />
                       <Label
                         htmlFor="email"
-                        className={`absolute left-4 top-1/2 -translate-y-1/2 text-emerald-900 text-base transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-emerald-900 peer-focus:top-2 peer-focus:text-sm peer-focus:text-emerald-900 ${
+                        className={`absolute left-4 top-1/2 font-sans -translate-y-1/2 text-emerald-900 text-base transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-emerald-900 peer-focus:top-2 peer-focus:text-sm peer-focus:text-emerald-900 ${
                           values.email ? "top-4 text-sm" : ""
                         }`}
                       >
@@ -94,7 +95,7 @@ const Login = () => {
                       </Label>
                     </div>
                     {touched.email && errors.email && (
-                      <div className="text-red-500 text-sm mt-1">
+                      <div className="text-red-500 font-sans text-sm mt-1">
                         {errors.email}
                       </div>
                     )}
@@ -110,7 +111,7 @@ const Login = () => {
                       onChange={handleChange}
                       onBlur={handleBlur}
                       value={values.password}
-                      className={`peer rounded-xl border-2 px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
+                      className={`peer rounded-xl border-2 font-sans px-4 pt-10 pb-4 text-base sm:text-lg md:text-xl focus:outline-none focus:ring-2 focus:ring-emerald-900 ${
                         touched.password && errors.password
                           ? "border-red-500"
                           : "border-gray-300"
@@ -118,7 +119,7 @@ const Login = () => {
                     />
                     <Label
                       htmlFor="password"
-                      className={`absolute left-4 top-1/2 -translate-y-1/2 text-emerald-900 text-base transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-emerald-900 peer-focus:top-2 peer-focus:text-sm peer-focus:text-emerald-900 ${
+                      className={`absolute left-4 top-1/2 font-sans -translate-y-1/2 text-emerald-900 text-base transition-all peer-placeholder-shown:top-1/2 peer-placeholder-shown:text-base peer-placeholder-shown:text-emerald-900 peer-focus:top-2 peer-focus:text-sm peer-focus:text-emerald-900 ${
                         values.password ? "top-4 text-sm" : ""
                       }`}
                     >
@@ -128,13 +129,13 @@ const Login = () => {
                     <button
                       type="button"
                       onClick={() => setShowPassword((prev) => !prev)}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 text-emerald-700 hover:text-emerald-900"
+                      className="absolute right-3 top-1/2 font-sans -translate-y-1/2 text-emerald-700 hover:text-emerald-900"
                     >
                       {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
                     </button>
                   </div>
                   {touched.password && errors.password && (
-                    <div className="text-red-500 text-sm mt-1">
+                    <div className="text-red-500 font-sans text-sm mt-1">
                       {errors.password}
                     </div>
                   )}
@@ -143,41 +144,19 @@ const Login = () => {
                 {/* Submit Button */}
                 <Button
                   type="submit"
-                  className="w-full bg-emerald-900 mt-5 hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
+                  className="w-full bg-emerald-900 mt-5 font-sans hover:bg-emerald-800 text-white text-base sm:text-lg md:text-xl py-6 rounded-xl"
                 >
                   Submit
                 </Button>
 
                 {/* Sign In Prompt */}
                 <div className="flex flex-row items-center justify-center mt-5">
-                  <p className="text-sm sm:text-base text-emerald-900">
+                  <p className="text-sm sm:text-base font-sans text-emerald-900">
                     Already have an account?{" "}
-                    <span className="font-semibold text-emerald-900 cursor-pointer">
+                    <span className="font-semibold font-sans text-emerald-900 cursor-pointer">
                       Sign In
                     </span>
                   </p>
-                </div>
-
-                {/* Social Buttons */}
-                <div className="flex flex-col items-center gap-4 mt-6">
-                  <p className="text-sm sm:text-base text-emerald-900">
-                    Or continue with:
-                  </p>
-                  <div className="flex space-x-4">
-                    <Button
-                      variant="outline"
-                      className="rounded-xl border-2 h-16 w-16 flex items-center justify-center"
-                    >
-                      <img src={apple} alt="Apple" className="h-6 w-6" />
-                    </Button>
-
-                    <Button
-                      variant="outline"
-                      className="rounded-xl border-2 h-16 w-16 flex items-center justify-center"
-                    >
-                      <img src={google} alt="Google" />
-                    </Button>
-                  </div>
                 </div>
               </form>
             )}
@@ -185,9 +164,31 @@ const Login = () => {
         </div>
       </div>
 
-      {/* Bottom: Terms and Conditions */}
-      <div className="w-full flex justify-center mt-6 px-4">
-        <p className="text-xs sm:text-sm text-emerald-900 text-center max-w-xs">
+      {/* Bottom: Social Login and Terms */}
+      <div className="flex flex-col items-center space-y-4 mt-auto">
+        {/* Social Buttons */}
+        <div className="flex flex-col items-center gap-4">
+          <p className="text-sm sm:text-base font-sans text-emerald-900">
+            Or continue with:
+          </p>
+          <div className="flex space-x-4">
+            <Button
+              variant="outline"
+              className="rounded-xl border-2 h-16 w-16 flex items-center justify-center"
+            >
+              <img src={apple} alt="Apple" className="h-6 w-6" />
+            </Button>
+            <Button
+              variant="outline"
+              className="rounded-xl border-2 h-16 w-16 flex items-center justify-center"
+            >
+              <img src={google} alt="Google" />
+            </Button>
+          </div>
+        </div>
+
+        {/* Terms and Conditions */}
+        <p className="text-xs font-sans sm:text-sm text-emerald-900 text-center max-w-xs px-2">
           By creating an account you agree to our{" "}
           <span className="text-emerald-900 font-bold">Terms and Conditions</span>
         </p>
@@ -197,3 +198,4 @@ const Login = () => {
 };
 
 export default Login;
+
